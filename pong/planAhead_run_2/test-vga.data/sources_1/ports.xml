@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Interface Version="1" Minor="1">
+	<Ifc Id="ROOT" Top="1">
+		<Port Id="CLOCK" Dir="IN"/>
+		<Port Id="HSYNC" Dir="OUT"/>
+		<Port Id="VSYNC" Dir="OUT"/>
+		<Port Id="RED" Dir="OUT"/>
+		<Port Id="GREEN" Dir="OUT"/>
+		<Port Id="BLUE" Dir="OUT"/>
+		<Port Id="P1_LEFT" Dir="IN"/>
+		<Port Id="P1_READY" Dir="IN"/>
+		<Port Id="P1_RIGHT" Dir="IN"/>
+		<Port Id="P2_LEFT" Dir="IN"/>
+		<Port Id="P2_READY" Dir="IN"/>
+		<Port Id="P2_RIGHT" Dir="IN"/>
+	</Ifc>
+</Interface>
+

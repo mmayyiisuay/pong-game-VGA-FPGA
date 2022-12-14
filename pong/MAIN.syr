@@ -1,0 +1,959 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Reading design: MAIN.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "MAIN.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "MAIN"
+Output Format                      : NGC
+Target Device                      : xc6slx9-3-tqg144
+
+---- Source Options
+Top Module Name                    : MAIN
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\LENOVO\Desktop\projectDigi\vhdl-example-main\pong\MAIN.vhd" into library work
+Parsing entity <MAIN>.
+Parsing architecture <Behavioral> of entity <main>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <MAIN> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:634 - "C:\Users\LENOVO\Desktop\projectDigi\vhdl-example-main\pong\MAIN.vhd" Line 899: Net <player1_y[9]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\LENOVO\Desktop\projectDigi\vhdl-example-main\pong\MAIN.vhd" Line 908: Net <player2_y[9]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\LENOVO\Desktop\projectDigi\vhdl-example-main\pong\MAIN.vhd" Line 918: Net <ball_w[6]> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <MAIN>.
+    Related source file is "C:\Users\LENOVO\Desktop\projectDigi\vhdl-example-main\pong\MAIN.vhd".
+WARNING:Xst:2935 - Signal 'player1_y', unconnected in block 'MAIN', is tied to its initial value (0000110010).
+WARNING:Xst:2935 - Signal 'player1_w', unconnected in block 'MAIN', is tied to its initial value (0110000).
+WARNING:Xst:2935 - Signal 'player1_h', unconnected in block 'MAIN', is tied to its initial value (0001000).
+WARNING:Xst:2935 - Signal 'player2_y', unconnected in block 'MAIN', is tied to its initial value (0110100110).
+WARNING:Xst:2935 - Signal 'player2_w', unconnected in block 'MAIN', is tied to its initial value (0110000).
+WARNING:Xst:2935 - Signal 'player2_h', unconnected in block 'MAIN', is tied to its initial value (0001000).
+WARNING:Xst:2935 - Signal 'ball_w', unconnected in block 'MAIN', is tied to its initial value (0001000).
+WARNING:Xst:2935 - Signal 'ball_h', unconnected in block 'MAIN', is tied to its initial value (0001000).
+    Found 1-bit register for signal <ready>.
+    Found 1-bit register for signal <playing>.
+    Found 1-bit register for signal <gamestop>.
+    Found 20-bit register for signal <game_counter>.
+    Found 31-bit register for signal <gcounter>.
+    Found 10-bit register for signal <player1_x>.
+    Found 5-bit register for signal <player1_dx>.
+    Found 10-bit register for signal <player2_x>.
+    Found 5-bit register for signal <player2_dx>.
+    Found 10-bit register for signal <ball_x>.
+    Found 10-bit register for signal <ball_y>.
+    Found 5-bit register for signal <ball_dx>.
+    Found 5-bit register for signal <ball_dy>.
+    Found 32-bit register for signal <score_PY2>.
+    Found 1-bit register for signal <maxscore>.
+    Found 32-bit register for signal <score_PY1>.
+    Found 1-bit register for signal <RED>.
+    Found 1-bit register for signal <GREEN>.
+    Found 1-bit register for signal <BLUE>.
+    Found 32-bit register for signal <pywin>.
+    Found 1-bit register for signal <HSYNC>.
+    Found 1-bit register for signal <VSYNC>.
+    Found 10-bit register for signal <x>.
+    Found 10-bit register for signal <y>.
+    Found 32-bit register for signal <state>.
+    Found 2-bit subtractor for signal <GND_5_o_GND_5_o_sub_10_OUT> created at line 961.
+    Found 2-bit subtractor for signal <GND_5_o_GND_5_o_sub_11_OUT> created at line 962.
+    Found 10-bit subtractor for signal <GND_5_o_GND_5_o_sub_62_OUT> created at line 187.
+    Found 10-bit subtractor for signal <GND_5_o_GND_5_o_sub_90_OUT> created at line 187.
+    Found 11-bit subtractor for signal <GND_5_o_GND_5_o_sub_296_OUT> created at line 250.
+    Found 11-bit subtractor for signal <GND_5_o_GND_5_o_sub_299_OUT> created at line 250.
+    Found 12-bit subtractor for signal <GND_5_o_GND_5_o_sub_630_OUT> created at line 250.
+    Found 12-bit subtractor for signal <GND_5_o_GND_5_o_sub_633_OUT> created at line 250.
+    Found 20-bit adder for signal <game_counter[19]_GND_5_o_add_6_OUT> created at line 954.
+    Found 31-bit adder for signal <gcounter[30]_GND_5_o_add_8_OUT> created at line 957.
+    Found 10-bit adder for signal <player1_x[9]_player1_dx[4]_add_13_OUT> created at line 965.
+    Found 10-bit adder for signal <player2_x[9]_player2_dx[4]_add_19_OUT> created at line 970.
+    Found 32-bit adder for signal <score_PY2[31]_GND_5_o_add_35_OUT> created at line 983.
+    Found 32-bit adder for signal <score_PY1[31]_GND_5_o_add_40_OUT> created at line 990.
+    Found 11-bit adder for signal <n1090> created at line 172.
+    Found 11-bit adder for signal <n1092> created at line 173.
+    Found 10-bit adder for signal <n1094[9:0]> created at line 187.
+    Found 10-bit adder for signal <ball_x[9]_GND_5_o_add_66_OUT> created at line 189.
+    Found 10-bit adder for signal <ball_y[9]_GND_5_o_add_74_OUT> created at line 194.
+    Found 11-bit adder for signal <n1102> created at line 172.
+    Found 11-bit adder for signal <n1104> created at line 173.
+    Found 10-bit adder for signal <n1106[9:0]> created at line 187.
+    Found 10-bit adder for signal <ball_x[9]_GND_5_o_add_94_OUT> created at line 189.
+    Found 10-bit adder for signal <ball_y[9]_GND_5_o_add_102_OUT> created at line 194.
+    Found 10-bit adder for signal <ball_x[9]_ball_dx[4]_add_113_OUT> created at line 1014.
+    Found 10-bit adder for signal <ball_y[9]_ball_dy[4]_add_114_OUT> created at line 1015.
+    Found 23-bit adder for signal <n1121> created at line 250.
+    Found 11-bit adder for signal <n1123> created at line 247.
+    Found 11-bit adder for signal <BUS_0026_GND_5_o_add_626_OUT> created at line 247.
+    Found 11-bit adder for signal <n1128> created at line 248.
+    Found 11-bit adder for signal <BUS_0028_GND_5_o_add_628_OUT> created at line 248.
+    Found 25-bit adder for signal <n1134> created at line 250.
+    Found 10-bit adder for signal <player1_x[9]_GND_5_o_add_638_OUT> created at line 216.
+    Found 11-bit adder for signal <n1065> created at line 219.
+    Found 10-bit adder for signal <player2_x[9]_GND_5_o_add_649_OUT> created at line 216.
+    Found 11-bit adder for signal <n1071> created at line 219.
+    Found 10-bit adder for signal <x[9]_GND_5_o_add_758_OUT> created at line 1091.
+    Found 10-bit adder for signal <y[9]_GND_5_o_add_760_OUT> created at line 1093.
+    Found 5-bit subtractor for signal <GND_5_o_ball_dy[4]_sub_102_OUT<4:0>> created at line 193.
+    Found 5-bit subtractor for signal <GND_5_o_ball_dx[4]_sub_66_OUT<4:0>> created at line 188.
+    Found 5-bit subtractor for signal <GND_5_o_ball_dx[4]_sub_94_OUT<4:0>> created at line 188.
+    Found 5-bit subtractor for signal <GND_5_o_ball_dx[4]_sub_30_OUT<4:0>> created at line 978.
+    Found 5-bit subtractor for signal <GND_5_o_ball_dy[4]_sub_74_OUT<4:0>> created at line 193.
+    Found 11x11-bit multiplier for signal <GND_5_o_GND_5_o_MuLt_297_OUT> created at line 250.
+    Found 11x11-bit multiplier for signal <GND_5_o_GND_5_o_MuLt_300_OUT> created at line 250.
+    Found 12x12-bit multiplier for signal <GND_5_o_GND_5_o_MuLt_631_OUT> created at line 250.
+    Found 12x12-bit multiplier for signal <GND_5_o_GND_5_o_MuLt_634_OUT> created at line 250.
+    Found 6x6-bit multiplier for signal <ball_w[6]_ball_w[6]_MuLt_636_OUT> created at line 250.
+    Found 1-bit 12-to-1 multiplexer for signal <_n1230> created at line 274.
+    Found 1-bit 12-to-1 multiplexer for signal <_n1233> created at line 274.
+    Found 1-bit 4-to-1 multiplexer for signal <_n1236> created at line 1029.
+    Found 1-bit 4-to-1 multiplexer for signal <_n1239> created at line 1029.
+    Found 1-bit 4-to-1 multiplexer for signal <_n1251> created at line 764.
+    Found 1-bit 4-to-1 multiplexer for signal <_n1254> created at line 764.
+    Found 10-bit comparator lessequal for signal <n0029> created at line 147
+    Found 10-bit comparator lessequal for signal <n0031> created at line 150
+    Found 10-bit comparator lessequal for signal <n0038> created at line 147
+    Found 10-bit comparator lessequal for signal <n0040> created at line 150
+    Found 31-bit comparator greater for signal <GND_5_o_gcounter[30]_LessThan_26_o> created at line 972
+    Found 11-bit comparator greater for signal <ball_x[9]_GND_5_o_LessThan_55_o> created at line 172
+    Found 11-bit comparator greater for signal <GND_5_o_BUS_0008_LessThan_57_o> created at line 172
+    Found 11-bit comparator greater for signal <ball_y[9]_BUS_0009_LessThan_59_o> created at line 173
+    Found 11-bit comparator greater for signal <player1_y[9]_BUS_0010_LessThan_61_o> created at line 173
+    Found 10-bit comparator lessequal for signal <n0095> created at line 187
+    Found 11-bit comparator lessequal for signal <n0098> created at line 187
+    Found 11-bit comparator lessequal for signal <n0106> created at line 192
+    Found 11-bit comparator lessequal for signal <n0108> created at line 192
+    Found 11-bit comparator greater for signal <ball_x[9]_GND_5_o_LessThan_83_o> created at line 172
+    Found 11-bit comparator greater for signal <GND_5_o_BUS_0016_LessThan_85_o> created at line 172
+    Found 11-bit comparator greater for signal <ball_y[9]_BUS_0017_LessThan_87_o> created at line 173
+    Found 11-bit comparator greater for signal <player2_y[9]_BUS_0018_LessThan_89_o> created at line 173
+    Found 10-bit comparator lessequal for signal <n0137> created at line 187
+    Found 11-bit comparator lessequal for signal <n0140> created at line 187
+    Found 11-bit comparator lessequal for signal <n0149> created at line 192
+    Found 11-bit comparator lessequal for signal <n0151> created at line 192
+    Found 10-bit comparator lessequal for signal <n0175> created at line 147
+    Found 10-bit comparator lessequal for signal <n0177> created at line 150
+    Found 10-bit comparator lessequal for signal <n0182> created at line 147
+    Found 10-bit comparator lessequal for signal <n0184> created at line 150
+    Found 10-bit comparator lessequal for signal <n0214> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_150_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0217> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_152_o> created at line 219
+    Found 10-bit comparator greater for signal <n0223> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_157_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0226> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_159_o> created at line 219
+    Found 10-bit comparator greater for signal <n0233> created at line 219
+    Found 10-bit comparator lessequal for signal <n0239> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_171_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0246> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_178_o> created at line 219
+    Found 10-bit comparator greater for signal <n0258> created at line 219
+    Found 10-bit comparator lessequal for signal <n0265> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_199_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0272> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_208_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0279> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_213_o> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_227_o> created at line 219
+    Found 10-bit comparator greater for signal <n0299> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_234_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0308> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_250_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0323> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_262_o> created at line 219
+    Found 10-bit comparator greater for signal <n0330> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_269_o> created at line 219
+    Found 23-bit comparator lessequal for signal <n0356> created at line 250
+    Found 10-bit comparator lessequal for signal <n0360> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_306_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0363> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_308_o> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_322_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0378> created at line 219
+    Found 10-bit comparator lessequal for signal <n0402> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_384_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0408> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_391_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0429> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_435_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0432> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_437_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0439> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_444_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0456> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_451_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0490> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_527_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0496> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_534_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0516> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_580_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0522> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_587_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0538> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_592_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0541> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_594_o> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_599_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0555> created at line 219
+    Found 10-bit comparator lessequal for signal <n0562> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_613_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0569> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_PWR_5_o_LessThan_620_o> created at line 219
+    Found 25-bit comparator lessequal for signal <n0590> created at line 250
+    Found 10-bit comparator lessequal for signal <n0596> created at line 219
+    Found 11-bit comparator greater for signal <GND_5_o_BUS_0033_LessThan_643_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0600> created at line 219
+    Found 11-bit comparator greater for signal <GND_5_o_BUS_0034_LessThan_646_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0612> created at line 219
+    Found 11-bit comparator greater for signal <GND_5_o_BUS_0037_LessThan_654_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0616> created at line 219
+    Found 11-bit comparator greater for signal <GND_5_o_BUS_0038_LessThan_657_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0649> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_683_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0664> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_688_o> created at line 219
+    Found 10-bit comparator greater for signal <y[9]_GND_5_o_LessThan_690_o> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_695_o> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_702_o> created at line 219
+    Found 10-bit comparator greater for signal <n0688> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_709_o> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_716_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0714> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_723_o> created at line 219
+    Found 10-bit comparator lessequal for signal <n0723> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_730_o> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_737_o> created at line 219
+    Found 10-bit comparator greater for signal <x[9]_GND_5_o_LessThan_744_o> created at line 219
+    Found 10-bit comparator greater for signal <GND_5_o_x[9]_LessThan_755_o> created at line 1079
+    Found 10-bit comparator lessequal for signal <n0759> created at line 1079
+    Found 10-bit comparator greater for signal <GND_5_o_y[9]_LessThan_757_o> created at line 1085
+    Found 10-bit comparator lessequal for signal <n0764> created at line 1085
+    Summary:
+	inferred   5 Multiplier(s).
+	inferred  43 Adder/Subtractor(s).
+	inferred 268 D-type flip-flop(s).
+	inferred 120 Comparator(s).
+	inferred 189 Multiplexer(s).
+Unit <MAIN> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 5
+ 11x11-bit multiplier                                  : 2
+ 12x12-bit multiplier                                  : 2
+ 6x6-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 43
+ 10-bit adder                                          : 14
+ 10-bit subtractor                                     : 2
+ 11-bit adder                                          : 10
+ 11-bit subtractor                                     : 2
+ 12-bit subtractor                                     : 2
+ 2-bit subtractor                                      : 2
+ 20-bit adder                                          : 1
+ 23-bit adder                                          : 1
+ 25-bit adder                                          : 1
+ 31-bit adder                                          : 1
+ 32-bit adder                                          : 2
+ 5-bit subtractor                                      : 5
+# Registers                                            : 25
+ 1-bit register                                        : 9
+ 10-bit register                                       : 6
+ 20-bit register                                       : 1
+ 31-bit register                                       : 1
+ 32-bit register                                       : 4
+ 5-bit register                                        : 4
+# Comparators                                          : 120
+ 10-bit comparator greater                             : 51
+ 10-bit comparator lessequal                           : 48
+ 11-bit comparator greater                             : 12
+ 11-bit comparator lessequal                           : 6
+ 23-bit comparator lessequal                           : 1
+ 25-bit comparator lessequal                           : 1
+ 31-bit comparator greater                             : 1
+# Multiplexers                                         : 189
+ 1-bit 12-to-1 multiplexer                             : 2
+ 1-bit 2-to-1 multiplexer                              : 118
+ 1-bit 4-to-1 multiplexer                              : 4
+ 10-bit 2-to-1 multiplexer                             : 26
+ 32-bit 2-to-1 multiplexer                             : 23
+ 5-bit 2-to-1 multiplexer                              : 14
+ 9-bit 2-to-1 multiplexer                              : 2
+# Xors                                                 : 10
+ 1-bit xor2                                            : 10
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <MAIN>.
+The following registers are absorbed into counter <gcounter>: 1 register on signal <gcounter>.
+The following registers are absorbed into counter <game_counter>: 1 register on signal <game_counter>.
+The following registers are absorbed into counter <x>: 1 register on signal <x>.
+The following registers are absorbed into counter <y>: 1 register on signal <y>.
+Unit <MAIN> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 5
+ 11x11-bit multiplier                                  : 2
+ 12x12-bit multiplier                                  : 2
+ 4x4-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 41
+ 10-bit adder                                          : 12
+ 10-bit subtractor                                     : 2
+ 11-bit adder                                          : 10
+ 11-bit subtractor                                     : 2
+ 12-bit subtractor                                     : 2
+ 2-bit subtractor                                      : 2
+ 20-bit adder                                          : 1
+ 23-bit adder                                          : 1
+ 25-bit adder                                          : 1
+ 31-bit adder                                          : 1
+ 32-bit adder                                          : 2
+ 5-bit subtractor                                      : 5
+# Counters                                             : 4
+ 10-bit up counter                                     : 2
+ 20-bit up counter                                     : 1
+ 31-bit up counter                                     : 1
+# Registers                                            : 197
+ Flip-Flops                                            : 197
+# Comparators                                          : 120
+ 10-bit comparator greater                             : 51
+ 10-bit comparator lessequal                           : 48
+ 11-bit comparator greater                             : 12
+ 11-bit comparator lessequal                           : 6
+ 23-bit comparator lessequal                           : 1
+ 25-bit comparator lessequal                           : 1
+ 31-bit comparator greater                             : 1
+# Multiplexers                                         : 207
+ 1-bit 12-to-1 multiplexer                             : 2
+ 1-bit 2-to-1 multiplexer                              : 138
+ 1-bit 4-to-1 multiplexer                              : 4
+ 10-bit 2-to-1 multiplexer                             : 24
+ 32-bit 2-to-1 multiplexer                             : 23
+ 5-bit 2-to-1 multiplexer                              : 14
+ 9-bit 2-to-1 multiplexer                              : 2
+# Xors                                                 : 10
+ 1-bit xor2                                            : 10
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <pywin_31> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_30> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_29> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_28> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_27> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_26> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_25> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_24> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_23> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_22> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_21> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_20> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_19> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_18> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_17> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_16> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_15> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_14> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_13> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_12> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_11> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_10> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_9> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_8> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_7> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_6> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_5> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_4> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_3> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pywin_2> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <MAIN> ...
+WARNING:Xst:1293 - FF/Latch <ball_y_9> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ball_x_9> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ball_dy_0> has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <state_31> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_30> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_29> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_28> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_27> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_26> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_25> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_24> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_23> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_22> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_21> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_20> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_19> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_18> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_17> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_16> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_15> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_14> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_13> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_12> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_11> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_10> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_9> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_8> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_7> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_6> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_5> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_4> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_3> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_2> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <player1_x_9> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <player2_x_9> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <state_31> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_30> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_29> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_28> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_27> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_26> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_25> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_24> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_23> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_22> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_21> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_20> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_19> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_18> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_17> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_16> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_15> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_14> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_13> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_12> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_11> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_10> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_9> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_8> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_7> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_6> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_5> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_4> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_3> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_2> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <player1_x_9> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <player2_x_9> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <score_PY1_5> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_6> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_7> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_8> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_9> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_10> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_11> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_12> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_13> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_14> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_15> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_16> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_17> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_18> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_19> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_20> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_21> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_22> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_23> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_24> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_25> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_26> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_27> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_28> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_29> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_30> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_31> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <game_counter_17> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <game_counter_18> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <game_counter_19> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_4> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_5> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_6> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_7> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_8> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_9> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_10> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_11> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_12> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_13> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_14> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_15> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_16> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_17> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_18> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_19> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_20> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_21> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_22> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_23> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_24> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_25> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_26> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_27> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_28> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_29> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_30> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY2_31> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ball_dx_0> has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <score_PY1_4> has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <x_0> in Unit <MAIN> is equivalent to the following FF/Latch, which will be removed : <game_counter_0> 
+INFO:Xst:2261 - The FF/Latch <x_1> in Unit <MAIN> is equivalent to the following FF/Latch, which will be removed : <game_counter_1> 
+INFO:Xst:2261 - The FF/Latch <player1_dx_1> in Unit <MAIN> is equivalent to the following 3 FFs/Latches, which will be removed : <player1_dx_2> <player1_dx_3> <player1_dx_4> 
+INFO:Xst:2261 - The FF/Latch <ball_dx_1> in Unit <MAIN> is equivalent to the following 3 FFs/Latches, which will be removed : <ball_dx_2> <ball_dx_3> <ball_dx_4> 
+INFO:Xst:2261 - The FF/Latch <ball_dy_1> in Unit <MAIN> is equivalent to the following 3 FFs/Latches, which will be removed : <ball_dy_2> <ball_dy_3> <ball_dy_4> 
+INFO:Xst:2261 - The FF/Latch <player2_dx_1> in Unit <MAIN> is equivalent to the following 3 FFs/Latches, which will be removed : <player2_dx_2> <player2_dx_3> <player2_dx_4> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block MAIN, actual ratio is 20.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 129
+ Flip-Flops                                            : 129
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : MAIN.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1727
+#      GND                         : 1
+#      INV                         : 13
+#      LUT1                        : 118
+#      LUT2                        : 85
+#      LUT3                        : 103
+#      LUT4                        : 191
+#      LUT5                        : 174
+#      LUT6                        : 414
+#      MUXCY                       : 333
+#      MUXF7                       : 19
+#      VCC                         : 1
+#      XORCY                       : 275
+# FlipFlops/Latches                : 129
+#      FD                          : 48
+#      FDE                         : 8
+#      FDR                         : 32
+#      FDRE                        : 41
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 11
+#      IBUF                        : 6
+#      OBUF                        : 5
+# DSPs                             : 4
+#      DSP48A1                     : 4
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             129  out of  11440     1%  
+ Number of Slice LUTs:                 1098  out of   5720    19%  
+    Number used as Logic:              1098  out of   5720    19%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1203
+   Number with an unused Flip Flop:    1074  out of   1203    89%  
+   Number with an unused LUT:           105  out of   1203     8%  
+   Number of fully used LUT-FF pairs:    24  out of   1203     1%  
+   Number of unique control sets:        12
+
+IO Utilization: 
+ Number of IOs:                          12
+ Number of bonded IOBs:                  12  out of    102    11%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of DSP48A1s:                      4  out of     16    25%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLOCK                              | BUFGP                  | 129   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 28.485ns (Maximum Frequency: 35.106MHz)
+   Minimum input arrival time before clock: 29.550ns
+   Maximum output required time after clock: 3.597ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLOCK'
+  Clock period: 28.485ns (frequency: 35.106MHz)
+  Total number of paths / destination ports: 2163508984199454 / 249
+-------------------------------------------------------------------------
+Delay:               28.485ns (Levels of Logic = 63)
+  Source:            playing (FF)
+  Destination:       GREEN (FF)
+  Source Clock:      CLOCK rising
+  Destination Clock: CLOCK rising
+
+  Data Path: playing to GREEN
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              11   0.447   0.987  playing (playing)
+     LUT5:I3->O            4   0.203   0.684  playing_maxscore_AND_5_o1_1 (playing_maxscore_AND_5_o1)
+     LUT5:I4->O            1   0.205   0.000  Madd_player1_x[9]_player1_dx[4]_add_13_OUT_lut<0> (Madd_player1_x[9]_player1_dx[4]_add_13_OUT_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Madd_player1_x[9]_player1_dx[4]_add_13_OUT_cy<0> (Madd_player1_x[9]_player1_dx[4]_add_13_OUT_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_player1_x[9]_player1_dx[4]_add_13_OUT_cy<1> (Madd_player1_x[9]_player1_dx[4]_add_13_OUT_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_player1_x[9]_player1_dx[4]_add_13_OUT_cy<2> (Madd_player1_x[9]_player1_dx[4]_add_13_OUT_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_player1_x[9]_player1_dx[4]_add_13_OUT_cy<3> (Madd_player1_x[9]_player1_dx[4]_add_13_OUT_cy<3>)
+     XORCY:CI->O          21   0.180   1.114  Madd_player1_x[9]_player1_dx[4]_add_13_OUT_xor<4> (player1_x[9]_player1_dx[4]_add_13_OUT<4>)
+     LUT4:I3->O            4   0.205   0.684  GND_5_o_player1_x[9]_LessThan_16_o1_SW0 (N47)
+     LUT6:I5->O            4   0.205   0.788  GND_5_o_player1_x[9]_LessThan_16_o1 (GND_5_o_player1_x[9]_LessThan_16_o)
+     LUT4:I2->O            2   0.203   0.845  Msub_GND_5_o_GND_5_o_sub_62_OUT_xor<4>11 (GND_5_o_GND_5_o_sub_62_OUT<4>)
+     LUT4:I1->O            1   0.205   0.000  Mcompar_GND_5_o_ball_x[9]_LessThan_63_o_lut<2> (Mcompar_GND_5_o_ball_x[9]_LessThan_63_o_lut<2>)
+     MUXCY:S->O            1   0.172   0.000  Mcompar_GND_5_o_ball_x[9]_LessThan_63_o_cy<2> (Mcompar_GND_5_o_ball_x[9]_LessThan_63_o_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_5_o_ball_x[9]_LessThan_63_o_cy<3> (Mcompar_GND_5_o_ball_x[9]_LessThan_63_o_cy<3>)
+     MUXCY:CI->O          25   0.213   1.193  Mcompar_GND_5_o_ball_x[9]_LessThan_63_o_cy<4> (GND_5_o_ball_x[9]_LessThan_63_o)
+     LUT6:I5->O           11   0.205   1.227  Mmux_n110741 (Madd_n1102_cy<3>)
+     LUT6:I1->O            2   0.203   0.864  Madd_n1102_xor<9>11 (n1102<9>)
+     LUT4:I0->O            1   0.203   0.000  Mcompar_GND_5_o_BUS_0016_LessThan_85_o_lut<4> (Mcompar_GND_5_o_BUS_0016_LessThan_85_o_lut<4>)
+     MUXCY:S->O           29   0.366   1.249  Mcompar_GND_5_o_BUS_0016_LessThan_85_o_cy<4> (Mcompar_GND_5_o_BUS_0016_LessThan_85_o_cy<4>)
+     INV:I->O              5   0.206   0.715  Mcompar_GND_5_o_BUS_0016_LessThan_85_o_cy<4>_inv_INV_0 (Mcompar_GND_5_o_BUS_0016_LessThan_85_o_cy<4>_inv)
+     LUT6:I5->O            1   0.205   0.000  Madd_ball_x[9]_ball_dx[4]_add_113_OUT_lut<0>1 (Madd_ball_x[9]_ball_dx[4]_add_113_OUT_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<0> (Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<1> (Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<2> (Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<3> (Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<4> (Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<5> (Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<5>)
+     XORCY:CI->O           1   0.180   0.580  Madd_ball_x[9]_ball_dx[4]_add_113_OUT_xor<6> (ball_x[9]_ball_dx[4]_add_113_OUT<6>)
+     LUT5:I4->O            7   0.205   1.118  Mmux_ball_x[9]_ball_x[9]_mux_115_OUT71 (ball_x[9]_ball_x[9]_mux_115_OUT<6>)
+     LUT6:I1->O            5   0.203   0.819  ball_x[9]_GND_5_o_LessThan_120_o13 (ball_x[9]_GND_5_o_LessThan_120_o)
+     LUT6:I4->O           11   0.203   1.111  Mmux_ball_x[9]_ball_x[9]_mux_140_OUT31 (Madd_n1123_lut<2>)
+     LUT6:I3->O            1   0.205   0.684  Msub_GND_5_o_GND_5_o_sub_630_OUT_lut<7>_SW0 (N512)
+     LUT6:I4->O            1   0.203   0.000  Msub_GND_5_o_GND_5_o_sub_630_OUT_lut<7> (Msub_GND_5_o_GND_5_o_sub_630_OUT_lut<7>)
+     MUXCY:S->O            1   0.172   0.000  Msub_GND_5_o_GND_5_o_sub_630_OUT_cy<7> (Msub_GND_5_o_GND_5_o_sub_630_OUT_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_5_o_GND_5_o_sub_630_OUT_cy<8> (Msub_GND_5_o_GND_5_o_sub_630_OUT_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_5_o_GND_5_o_sub_630_OUT_cy<9> (Msub_GND_5_o_GND_5_o_sub_630_OUT_cy<9>)
+     MUXCY:CI->O           0   0.019   0.000  Msub_GND_5_o_GND_5_o_sub_630_OUT_cy<10> (Msub_GND_5_o_GND_5_o_sub_630_OUT_cy<10>)
+     XORCY:CI->O          14   0.180   0.957  Msub_GND_5_o_GND_5_o_sub_630_OUT_xor<11> (GND_5_o_GND_5_o_sub_630_OUT<11>)
+     DSP48A1:B11->M0       1   3.364   0.580  Mmult_GND_5_o_GND_5_o_MuLt_631_OUT (GND_5_o_GND_5_o_MuLt_631_OUT<0>)
+     LUT2:I1->O            1   0.205   0.000  Madd_n1134_lut<0> (Madd_n1134_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Madd_n1134_cy<0> (Madd_n1134_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<1> (Madd_n1134_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<2> (Madd_n1134_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<3> (Madd_n1134_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<4> (Madd_n1134_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<5> (Madd_n1134_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<6> (Madd_n1134_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<7> (Madd_n1134_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<8> (Madd_n1134_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<9> (Madd_n1134_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<10> (Madd_n1134_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<11> (Madd_n1134_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<12> (Madd_n1134_cy<12>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<13> (Madd_n1134_cy<13>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<14> (Madd_n1134_cy<14>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<15> (Madd_n1134_cy<15>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<16> (Madd_n1134_cy<16>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<17> (Madd_n1134_cy<17>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<18> (Madd_n1134_cy<18>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<19> (Madd_n1134_cy<19>)
+     XORCY:CI->O           1   0.180   0.924  Madd_n1134_xor<20> (n1134<20>)
+     LUT6:I1->O            1   0.203   0.000  Mcompar_GND_5_o_BUS_0030_LessThan_638_o_lut<4> (Mcompar_GND_5_o_BUS_0030_LessThan_638_o_lut<4>)
+     MUXCY:S->O            3   0.172   0.651  Mcompar_GND_5_o_BUS_0030_LessThan_638_o_cy<4> (GND_5_o_BUS_0030_LessThan_638_o)
+     LUT6:I5->O            1   0.205   0.000  Mmux_GND_5_o_GND_5_o_MUX_501_o13 (GND_5_o_GND_5_o_MUX_501_o)
+     FDR:D                     0.102          BLUE
+    ----------------------------------------
+    Total                     28.485ns (10.713ns logic, 17.772ns route)
+                                       (37.6% logic, 62.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLOCK'
+  Total number of paths / destination ports: 1388335315564164 / 96
+-------------------------------------------------------------------------
+Offset:              29.550ns (Levels of Logic = 64)
+  Source:            P2_READY (PAD)
+  Destination:       GREEN (FF)
+  Destination Clock: CLOCK rising
+
+  Data Path: P2_READY to GREEN
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.222   1.277  P2_READY_IBUF (P2_READY_IBUF)
+     LUT5:I0->O            4   0.203   0.684  playing_maxscore_AND_5_o1_1 (playing_maxscore_AND_5_o1)
+     LUT5:I4->O            1   0.205   0.000  Madd_player1_x[9]_player1_dx[4]_add_13_OUT_lut<0> (Madd_player1_x[9]_player1_dx[4]_add_13_OUT_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Madd_player1_x[9]_player1_dx[4]_add_13_OUT_cy<0> (Madd_player1_x[9]_player1_dx[4]_add_13_OUT_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_player1_x[9]_player1_dx[4]_add_13_OUT_cy<1> (Madd_player1_x[9]_player1_dx[4]_add_13_OUT_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_player1_x[9]_player1_dx[4]_add_13_OUT_cy<2> (Madd_player1_x[9]_player1_dx[4]_add_13_OUT_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_player1_x[9]_player1_dx[4]_add_13_OUT_cy<3> (Madd_player1_x[9]_player1_dx[4]_add_13_OUT_cy<3>)
+     XORCY:CI->O          21   0.180   1.114  Madd_player1_x[9]_player1_dx[4]_add_13_OUT_xor<4> (player1_x[9]_player1_dx[4]_add_13_OUT<4>)
+     LUT4:I3->O            4   0.205   0.684  GND_5_o_player1_x[9]_LessThan_16_o1_SW0 (N47)
+     LUT6:I5->O            4   0.205   0.788  GND_5_o_player1_x[9]_LessThan_16_o1 (GND_5_o_player1_x[9]_LessThan_16_o)
+     LUT4:I2->O            2   0.203   0.845  Msub_GND_5_o_GND_5_o_sub_62_OUT_xor<4>11 (GND_5_o_GND_5_o_sub_62_OUT<4>)
+     LUT4:I1->O            1   0.205   0.000  Mcompar_GND_5_o_ball_x[9]_LessThan_63_o_lut<2> (Mcompar_GND_5_o_ball_x[9]_LessThan_63_o_lut<2>)
+     MUXCY:S->O            1   0.172   0.000  Mcompar_GND_5_o_ball_x[9]_LessThan_63_o_cy<2> (Mcompar_GND_5_o_ball_x[9]_LessThan_63_o_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_5_o_ball_x[9]_LessThan_63_o_cy<3> (Mcompar_GND_5_o_ball_x[9]_LessThan_63_o_cy<3>)
+     MUXCY:CI->O          25   0.213   1.193  Mcompar_GND_5_o_ball_x[9]_LessThan_63_o_cy<4> (GND_5_o_ball_x[9]_LessThan_63_o)
+     LUT6:I5->O           11   0.205   1.227  Mmux_n110741 (Madd_n1102_cy<3>)
+     LUT6:I1->O            2   0.203   0.864  Madd_n1102_xor<9>11 (n1102<9>)
+     LUT4:I0->O            1   0.203   0.000  Mcompar_GND_5_o_BUS_0016_LessThan_85_o_lut<4> (Mcompar_GND_5_o_BUS_0016_LessThan_85_o_lut<4>)
+     MUXCY:S->O           29   0.366   1.249  Mcompar_GND_5_o_BUS_0016_LessThan_85_o_cy<4> (Mcompar_GND_5_o_BUS_0016_LessThan_85_o_cy<4>)
+     INV:I->O              5   0.206   0.715  Mcompar_GND_5_o_BUS_0016_LessThan_85_o_cy<4>_inv_INV_0 (Mcompar_GND_5_o_BUS_0016_LessThan_85_o_cy<4>_inv)
+     LUT6:I5->O            1   0.205   0.000  Madd_ball_x[9]_ball_dx[4]_add_113_OUT_lut<0>1 (Madd_ball_x[9]_ball_dx[4]_add_113_OUT_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<0> (Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<1> (Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<2> (Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<3> (Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<4> (Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<5> (Madd_ball_x[9]_ball_dx[4]_add_113_OUT_cy<5>)
+     XORCY:CI->O           1   0.180   0.580  Madd_ball_x[9]_ball_dx[4]_add_113_OUT_xor<6> (ball_x[9]_ball_dx[4]_add_113_OUT<6>)
+     LUT5:I4->O            7   0.205   1.118  Mmux_ball_x[9]_ball_x[9]_mux_115_OUT71 (ball_x[9]_ball_x[9]_mux_115_OUT<6>)
+     LUT6:I1->O            5   0.203   0.819  ball_x[9]_GND_5_o_LessThan_120_o13 (ball_x[9]_GND_5_o_LessThan_120_o)
+     LUT6:I4->O           11   0.203   1.111  Mmux_ball_x[9]_ball_x[9]_mux_140_OUT31 (Madd_n1123_lut<2>)
+     LUT6:I3->O            1   0.205   0.684  Msub_GND_5_o_GND_5_o_sub_630_OUT_lut<7>_SW0 (N512)
+     LUT6:I4->O            1   0.203   0.000  Msub_GND_5_o_GND_5_o_sub_630_OUT_lut<7> (Msub_GND_5_o_GND_5_o_sub_630_OUT_lut<7>)
+     MUXCY:S->O            1   0.172   0.000  Msub_GND_5_o_GND_5_o_sub_630_OUT_cy<7> (Msub_GND_5_o_GND_5_o_sub_630_OUT_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_5_o_GND_5_o_sub_630_OUT_cy<8> (Msub_GND_5_o_GND_5_o_sub_630_OUT_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_5_o_GND_5_o_sub_630_OUT_cy<9> (Msub_GND_5_o_GND_5_o_sub_630_OUT_cy<9>)
+     MUXCY:CI->O           0   0.019   0.000  Msub_GND_5_o_GND_5_o_sub_630_OUT_cy<10> (Msub_GND_5_o_GND_5_o_sub_630_OUT_cy<10>)
+     XORCY:CI->O          14   0.180   0.957  Msub_GND_5_o_GND_5_o_sub_630_OUT_xor<11> (GND_5_o_GND_5_o_sub_630_OUT<11>)
+     DSP48A1:B11->M0       1   3.364   0.580  Mmult_GND_5_o_GND_5_o_MuLt_631_OUT (GND_5_o_GND_5_o_MuLt_631_OUT<0>)
+     LUT2:I1->O            1   0.205   0.000  Madd_n1134_lut<0> (Madd_n1134_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Madd_n1134_cy<0> (Madd_n1134_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<1> (Madd_n1134_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<2> (Madd_n1134_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<3> (Madd_n1134_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<4> (Madd_n1134_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<5> (Madd_n1134_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<6> (Madd_n1134_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<7> (Madd_n1134_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<8> (Madd_n1134_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<9> (Madd_n1134_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<10> (Madd_n1134_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<11> (Madd_n1134_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<12> (Madd_n1134_cy<12>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<13> (Madd_n1134_cy<13>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<14> (Madd_n1134_cy<14>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<15> (Madd_n1134_cy<15>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<16> (Madd_n1134_cy<16>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<17> (Madd_n1134_cy<17>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<18> (Madd_n1134_cy<18>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_n1134_cy<19> (Madd_n1134_cy<19>)
+     XORCY:CI->O           1   0.180   0.924  Madd_n1134_xor<20> (n1134<20>)
+     LUT6:I1->O            1   0.203   0.000  Mcompar_GND_5_o_BUS_0030_LessThan_638_o_lut<4> (Mcompar_GND_5_o_BUS_0030_LessThan_638_o_lut<4>)
+     MUXCY:S->O            3   0.172   0.651  Mcompar_GND_5_o_BUS_0030_LessThan_638_o_cy<4> (GND_5_o_BUS_0030_LessThan_638_o)
+     LUT6:I5->O            1   0.205   0.000  Mmux_GND_5_o_GND_5_o_MUX_501_o13 (GND_5_o_GND_5_o_MUX_501_o)
+     FDR:D                     0.102          BLUE
+    ----------------------------------------
+    Total                     29.550ns (11.488ns logic, 18.063ns route)
+                                       (38.9% logic, 61.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLOCK'
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Offset:              3.597ns (Levels of Logic = 1)
+  Source:            HSYNC (FF)
+  Destination:       HSYNC (PAD)
+  Source Clock:      CLOCK rising
+
+  Data Path: HSYNC to HSYNC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.447   0.579  HSYNC (HSYNC_OBUF)
+     OBUF:I->O                 2.571          HSYNC_OBUF (HSYNC)
+    ----------------------------------------
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock CLOCK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLOCK          |   28.485|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 18.48 secs
+ 
+--> 
+
+Total memory usage is 4522500 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  168 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
+

@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\LENOVO\Desktop\projectDigi\vhdl-example-main\secondary_board\MAIN.ncd
+OUTFILE=C:\Users\LENOVO\Desktop\projectDigi\vhdl-example-main\secondary_board\MAIN.bit
+FAMILY=Spartan6
+PART=xc6slx9-3tqg144
+WORKINGDIR=C:\Users\LENOVO\Desktop\projectDigi\vhdl-example-main\secondary_board
+LICENSE=WebPack
+USER_INFO=__0_0_0
